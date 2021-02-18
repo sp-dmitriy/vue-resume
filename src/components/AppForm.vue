@@ -31,13 +31,15 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit('add-block',{
-        id: uuidv4(),
-        type: this.type,
-        value: this.value,
-      })
-      this.value = ''
-      this.type = 'Title'
+      if(this.value.length && ['Title','Subtitle','Avatar','Text'].includes(this.type)) {
+        this.$emit('add-block',{
+          id: uuidv4(),
+          type: this.type,
+          value: this.value,
+        })
+        this.value = ''
+        this.type = 'Title'
+      }
     }
   },
   computed: {

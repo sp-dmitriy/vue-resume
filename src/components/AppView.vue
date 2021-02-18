@@ -4,7 +4,7 @@
       <component 
         v-for="block in blocks" 
         :key="block.id"  
-        :is="'AppView' + block.type"
+        :is="'r-' + block.type"
         :value="block.value"
       ></component>
     </div> 
@@ -13,17 +13,17 @@
 </template>
 
 <script>
-import AppViewTitle from './AppViewTitle'
-import AppViewSubtitle from './AppViewSubtitle'
-import AppViewAvatar from './AppViewAvatar'
-import AppViewText from './AppViewText'
+import rTitle from './AppViewBlock/r-title'
+import rSubtitle from './AppViewBlock/r-subtitle'
+import rAvatar from './AppViewBlock/r-avatar'
+import rText from './AppViewBlock/r-text'
 
 export default {
   props: {
     blocks: Array
   },
   components: {
-    AppViewTitle, AppViewSubtitle, AppViewAvatar, AppViewText
+   rTitle, rSubtitle, rAvatar, rText
   }
 }
 </script>
